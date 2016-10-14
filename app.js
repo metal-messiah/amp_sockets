@@ -28,6 +28,7 @@ io.on('connection', function (socket) {
             username: data.user,
             app: data.app
         }
+        io.sockets.emit("new-join", data)
         io.sockets.emit("update-people", users)
     })
 
