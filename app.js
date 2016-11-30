@@ -60,5 +60,10 @@ io.on('connection', function (socket) {
         io.sockets.emit("update-people", users)
     })
 
+    socket.on("forumPost", function (data) {
+
+        socket.broadcast.emit("new-forum-post", data)
+    })
+
 })
 
